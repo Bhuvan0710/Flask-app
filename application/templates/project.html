@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projects</title>
+    </head>
+    <body>
+        <h1>List of Projects</h1>
+
+    <div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">ProjectID</th>
+                <th scope="col">Project Name</th>
+                <th scope="col">Client Name</th>
+                <th scope="col">Project Start</th>
+                <th scope="col">Project End</th>
+                <th scope="col">Project Status</th>
+                <th scope="col">Project Skills</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <!-- Construct the rest of courses here -->
+            {%for data in projdata %}
+            <tr>
+                <td scope='row'>{{ data[0] }}</td>
+                <td>{{ data[1] }}</td>
+                <td>{{ data[2] }}</td>
+                <td>{{ data[3] }}</td>
+                <td>{{ data[4] }}</td>
+                <td>{{ data[5] }}</td>
+                <td>{{ data[6] }}</td>
+                <td> 
+                
+                    <form  method="GET">
+                        <p type="hidden" name="proj_id" value="{{data['proj_id']}}">
+                        <p type="hidden" name="proj_name" value="{{data['proj_name']}}">
+                        <p type="hidden" name="client_name" value="{{data['client_name']}}">
+                        <p type="hidden" name="proj_start" value="{{data['proj_start']}}">
+                        <p type="hidden" name="proj_end" value="{{data['proj_end']}}">
+                        <p type="hidden" name="proj_status" value="{{data['proj_status']}}">
+                        <p type="hidden" name="proj_skills" value="{{data['proj_skills']}}"> 
+                </form>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>
